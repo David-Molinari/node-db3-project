@@ -81,7 +81,6 @@ router.post('/:id/steps', (req, res) => {
 router.put('/:id', (req, res) => {
   const { id } = req.params;
   const changes = req.body;
-  console.log(changes)
 
   Schemes.findById(id)
   .then(scheme => {

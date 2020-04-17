@@ -18,7 +18,7 @@ module.exports = {
   }
 
   function findSteps(id) {
-    return db("steps").where({ id })
+    return db("steps").where({ scheme_id: id })
   }
 
   function add(scheme) {
@@ -29,14 +29,14 @@ module.exports = {
     });
   }
 
-//   function update(id, changes) {
-//     return db("schemes")
-//       .where({ id })
-//       .update(changes)
-//       .then(() => {
-//         return findById(id);
-//       });
-//   } 
+  function update(changes, id) {
+    return db("schemes")
+      .where({ id })
+      .update(changes)
+      .then(() => {
+        return findById(id);
+      });
+  } 
 
   function remove(id) {
     return db('schemes')
